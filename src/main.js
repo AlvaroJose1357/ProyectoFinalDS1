@@ -1,4 +1,4 @@
-/*Conexion a la base de datos*/
+//Conexion a la base de datos
 const mysql = require("mysql")//mirar si son simples?
 
 const conection = mysql.createConnection({
@@ -7,12 +7,13 @@ const conection = mysql.createConnection({
     password: "", 
     databases:"/*falta base datos*/"
 })
-
+//verifica conexion 
 conection.connect((err) =>{
     if(err) throw err
     console.log("la conexion ha funcionado")
 })
-/*Apartir de aqui se comienzan el programa*/
+//.query
+//Apartir de aqui se comienzan el programa
 
 
 
@@ -24,5 +25,5 @@ conection.connect((err) =>{
 
 
 
-/*Para finalizar la conexion y termine*/
+//Para finalizar la conexion y termine//
 conection.end()
