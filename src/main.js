@@ -27,12 +27,21 @@ let fechaAplica = document.getElementById('fechaAplica')
 let nitAgenda = document.getElementById('nitAgenda ')
 let NumDocPers = document.getElementById('NumDocPers')
 let fechaVisita = document.getElementById('fechaVisita')
-let h = document.getElementById('')
-let  = document.getElementById('')
-let  = document.getElementById('')
-let  = document.getElementById('')
-let  = document.getElementById('')
-let  = document.getElementById('')
+let horaVisita = document.getElementById('horaVisita')
+let email_index = document.getElementById('email_index')
+let password = document.getElementById('password')
+//metodoPago
+let codMetPago = document.getElementById('codMetPago')
+let descriMetPago = document.getElementById('descriMetPago')
+//TipoDoc
+let codTipoDoc = document.getElementById('codTipoDoc')
+let descrTipoDoc = document.getElementById('descrTipoDoc')
+//Botones
+const buttonIngre = document.getElementById('buttonIngre')
+const buttonModi = document.getElementById('buttonModi')
+const buttonElim = document.getElementById('buttonElim')
+const buttonDesha = document.getElementById('buttonDesha')
+const buttonCance = document.getElementById('buttonCance')
 //Conexion a la base de dato
 const mysql = require('mysql')//mira si son simples?
 
