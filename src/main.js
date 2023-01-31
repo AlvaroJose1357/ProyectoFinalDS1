@@ -1,3 +1,6 @@
+// Declaracion de variables
+//let NumeroDoc = 
+
 //Conexion a la base de datos
 const mysql = require("mysql")//mirar si son simples?
 
@@ -14,7 +17,6 @@ conection.connect((err) =>{
 })
 //.query
 //Apartir de aqui se comienzan el programa
-
 
 
 
