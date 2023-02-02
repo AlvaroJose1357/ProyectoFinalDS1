@@ -28,6 +28,7 @@ let nitAgenda = document.getElementById('nitAgenda ')
 let NumDocPers = document.getElementById('NumDocPers')
 let fechaVisita = document.getElementById('fechaVisita')
 let horaVisita = document.getElementById('horaVisita')
+
 let email_index = document.getElementById('email_index')
 let password = document.getElementById('password')
 //metodoPago
@@ -56,8 +57,7 @@ conection.connect((err) =>{
     if(err) throw err
     console.log("la conexion ha funcionado")
 })
-//.query
-//Apartir de aqui se comienzan el programa
+//aqui se hace funcionalida
 
 
 
