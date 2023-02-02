@@ -68,11 +68,12 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/src/index.html');
 });
 
+// login 
 app.post('/src/index.html', (req, res) => {
-    const email = req.body.email_index;
+    const email = req.body.Email;
     const password = req.body.password;
     const query = 'SELECT * FROM users WHERE username = ? AND password = ?';
-    connection.query(query, [Email, password], (error, results) => {
+    connection.query(query, [email, password], (error, results) => {
     if (error) throw error;
     if (results.length > 0) {
         console.log('Login successful');
@@ -85,6 +86,27 @@ app.post('/src/index.html', (req, res) => {
     });
 });
 
+// insertar datos
+
+app.post("/", (req, res) => {
+    const numeroDoc = req.body.NumeroDoc;
+    const nom1 = req.body.Nombre1;
+    const nom2 = req.body.Nombre2;
+    const ape1= req.body.Apellido1;
+    const ape2= req.body.Apellido2;
+    const feNac= req.body.FechaNac;
+    const telef= req.body.Tel;
+    const direcc= req.body.Dire;
+    const email= req.body.Email;
+
+    const sql = "INSERT INTO form_data (NumeroDoc, Nombre1, Nombre2, Apellido1, Apellido2, FechaNac, Tel, Dire, Email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    const values = [numeroDoc, nom1,nom2, ape1, ape2, feNac, telef, direcc, email];
+
+    connection.query(sql, values, (error, results) => {
+        if (error) throw error;
+        res.send("Data saved successfully.");
+    });
+});
 
 /*function login(){
     let email_index, password 
