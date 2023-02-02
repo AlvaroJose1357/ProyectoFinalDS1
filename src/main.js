@@ -1,8 +1,8 @@
 // Declaracion de variables
 //Propietario
-let NumeroDoc = document.getElementById('NumeroDoc')
-let Nombre1 = document.getElementById('Nombre1')
-let Nombre2 = document.getElementById('Nombre2')
+let NumeroDoc = document.getElementById('NumeroDoc');
+let Nombre1 = document.getElementById('Nombre1');
+let Nombre2 = document.getElementById('Nombre2');
 let Apellido1 = document.getElementById('Apellido1')
 let Apellido2 = document.getElementById('Apellido2')
 let FechaNac = document.getElementById('FechaNac')
@@ -24,13 +24,13 @@ let nitVacu = document.getElementById('nitVacu')
 let nomVacu = document.getElementById('nomVacu')
 let fechaAplica = document.getElementById('fechaAplica')
 //Agendamiento
-let nitAgenda = document.getElementById('nitAgenda ')
-let NumDocPers = document.getElementById('NumDocPers')
-let fechaVisita = document.getElementById('fechaVisita')
-let horaVisita = document.getElementById('horaVisita')
-
-let email_index = document.getElementById('email_index')
-let password = document.getElementById('password')
+let nitAgenda = document.getElementById('nitAgenda ');
+let NumDocPers = document.getElementById('NumDocPers');
+let fechaVisita = document.getElementById('fechaVisita');
+let horaVisita = document.getElementById('horaVisita');
+//index 
+let email_index= document.getElementById('email_index');
+let password = document.getElementById('password');
 //metodoPago
 let codMetPago = document.getElementById('codMetPago')
 let descriMetPago = document.getElementById('descriMetPago')
@@ -44,20 +44,59 @@ const buttonElim = document.getElementById('buttonElim')
 const buttonDesha = document.getElementById('buttonDesha')
 const buttonCance = document.getElementById('buttonCance')
 //Conexion a la base de dato
-const mysql = require('mysql')//mira si son simples?
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const mysql2 = require('mysql2');
 
-const conection = mysql.createConnection({
-    host: 'localhost:3000', 
+app.use(bodyParser.urlencoded({ extended: false }));
+
+const connection = mysql2.createConnection({
+    host: 'localhost:3000',
     user: 'root',
-    password: '', 
-    databases:'/*falta base datos*/'
-})
-//verifica conexion 
-conection.connect((err) =>{
-    if(err) throw err
-    console.log("la conexion ha funcionado")
-})
-//aqui se hace funcionalida
+    password: '',
+    database: 'database_name'
+});
+//conexion a BD
+connection.connect((error) => {
+    if (error) throw error;
+    console.log('Connected to the database!');
+});
+
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/src/index.html');
+});
+
+app.post('/src/index.html', (req, res) => {
+    const email = req.body.email_index;
+    const password = req.body.password;
+    const query = 'SELECT * FROM users WHERE username = ? AND password = ?';
+    connection.query(query, [Email, password], (error, results) => {
+    if (error) throw error;
+    if (results.length > 0) {
+        console.log('Login successful');
+        res.send('Login successful');
+    } else {
+        console.log('Login failed');
+        res.send('Login failed');
+    }
+        
+    });
+});
+
+
+/*function login(){
+    let email_index, password 
+    
+    
+    
+
+    if(email_index == )
+
+
+
+}*/
 
 
 
@@ -68,6 +107,5 @@ conection.connect((err) =>{
 
 
 
-
-//Para finalizar la conexion y termine//
+//Para finalizar la conexion y termine
 conection.end()

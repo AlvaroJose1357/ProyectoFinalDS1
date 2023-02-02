@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/AlvaroJose1357/ProyectoFinalDS1#readme",
   "dependencies": {
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "mysql2": "^3.1.0"
   }
 }
