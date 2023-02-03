@@ -26,8 +26,11 @@ let fechaAplica = document.getElementById('fechaAplica')
 //Agendamiento
 let nitAgenda = document.getElementById('nitAgenda ');
 let NumDocPers = document.getElementById('NumDocPers');
+let numRegisMasc = document.getElementById('NumDocMas')
 let fechaVisita = document.getElementById('fechaVisita');
 let horaVisita = document.getElementById('horaVisita');
+let planes = document.getElementById('Planes')
+let servicioCasa = document.getElementById('ServicioCasa')
 //index 
 let email_index= document.getElementById('email_index');
 let password = document.getElementById('password');
@@ -55,7 +58,7 @@ const connection = mysql2.createConnection({
     host: 'localhost:3000',
     user: 'root',
     password: '',
-    database: 'database_name'
+    database: 'guarderiacanina'
 });
 //conexion a BD
 connection.connect((error) => {
@@ -88,7 +91,7 @@ app.post('/src/index.html', (req, res) => {
 
 // insertar datos
 
-app.post("/", (req, res) => {
+app.post("/src/IngrePropi.html", (req, res) => {
     const numeroDoc = req.body.NumeroDoc;
     const nom1 = req.body.Nombre1;
     const nom2 = req.body.Nombre2;
@@ -108,6 +111,25 @@ app.post("/", (req, res) => {
     });
 });
 
+app.post("/src/IngreAgenda.html", (req, res) => {
+    const nitagen = req.body.nitAgenda;
+    const numDocPers = req.body.NumDocPers;
+    const fecvisit = req.body.fechaVisita;
+    const horavisit = req.body.horaVisita;
+    const plan = req.body.planes;
+    const servCas = req.body.servicioCasa;
+    const numMasc = req.body.numRegisMasc;
+
+    const sql = "INSERT INTO form_data (nitAgenda, numDocPers, numRegisMasc, fecvisit, horavisit, plan, servCas) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    const values = [nitagen, numDocPers,numMasc, fecvisit, horavisit, plan, servCas];
+
+    connection.query(sql, values, (error, results) => {
+        if (error) throw error;
+        res.send("Data saved successfully.");
+    });
+});
+
+// 
 /*function login(){
     let email_index, password 
     
