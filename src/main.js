@@ -75,7 +75,7 @@ app.get('/', (req, res) => {
 app.post('/src/index.html', (req, res) => {
     const email = req.body.Email;
     const password = req.body.password;
-    const query = 'SELECT * FROM users WHERE username = ? AND password = ?';
+    const query = 'SELECT * FROM usuarios WHERE emailusu = ? AND contrasena = ?';
     connection.query(query, [email, password], (error, results) => {
     if (error) throw error;
     if (results.length > 0) {
