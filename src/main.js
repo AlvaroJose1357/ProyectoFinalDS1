@@ -6,6 +6,12 @@ const mysql = require('mysql');
 const myConnection = require('express-myConnection');
 const app = express();
 
+//importar rutas 
+const customerRouter = require('./customer');
+
+
+
+
 //settings 
 app.set('port', process.env.PORT || 3000);
 //configuracion de las plantillas
@@ -15,17 +21,22 @@ app.set('src', path.join(__dirname, 'src'));
 //middlewares
 
 app.use(morgan('dev'));
+
+//mirar por que el error
 app.use(myConnection(mysql, { 
     
-        host: 'localhost:3000', 
+        host: 'localhost', 
         user: 'root',
         password: '', 
         port: 3306, 
         database: 'guarderiacanina'},'single'));
 
-
+        
 //router
+app.use('/', customerRouter);
 
+//static files
+app.use(express.static(path.join(__dirname, 'public')))
 
 
 //levantamos el servidor 
