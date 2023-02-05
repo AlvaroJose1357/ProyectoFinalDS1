@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingresar Agendamiento</title>
+    <title>Informes</title>
     <!-- Font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- Custom CSS-->
@@ -44,7 +44,32 @@
         <div class="Tabla">
         <!-- #region <img src="/img/portada.png" alt="portada" > --> 
         <h2>Lista de Caninos</h2>
-        <table class="lista" id="ListaCaninos"></table>
+        <table class="lista" id="ListaCaninos">
+            <thead>
+                <!-- cabezeras -->
+                <th>Nombre</th>
+                <th>Raza</th>
+                <th>Sexo</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Esterilizado</th>
+                <th>Cliente (Dueño)</th>
+            </thead>
+            <tbody>
+                <!-- cuerpo donde presentan datos -->
+                <% if (datamasc){ %>
+                    <% for (var i = 0; i<datamasc.lengt; i++) { %>
+                        <tr>
+                            <td><% datamasc[i]. %></td>
+                            <td><% datamasc[i]. %></td>
+                            <td><% datamasc[i]. %></td>
+                            <td><% datamasc[i]. %></td>
+                            <td><% datamasc[i]. %></td>
+                            <td><% datamasc[i]. %></td>
+                        </tr>
+                    <% } %>
+                <% } %>
+            </tbody>
+        </table>
         </div>
         <!-- Contactos-->
         <section class="social">

@@ -8,15 +8,20 @@ controller.list = (req,res)=>{
             }
             console.log(mascota);
             res.render('mascota', {
-                data: mascota
+                datamasc: mascota
             });
         });
     });
 }
 
 controller.save = (req, res)=>{
-    
-
+    const dataagend=req.body;
+    req.getConnection((err,conn) => {
+        conn.query('INSERT INTO agendamiento set ? ', [dataagend],(err, customer)=>{
+            console.log(agendamiento);
+            res.redirect('/')
+        });
+    });
 }
 
 
