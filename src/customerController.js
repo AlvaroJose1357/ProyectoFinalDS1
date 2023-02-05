@@ -1,22 +1,23 @@
 const controller = {};
 
-/*
 controller.list = (req,res)=>{
-    req.getConnection {(err,conn) => {
-        conn.query('select * from mascotas', (err, mascotas )=> {
+    req.getConnection((err,conn) => {
+        conn.query('SELECT * FROM mascota', (err, mascota)=>{
             if(err){
-                res.json(err)
+                res.json(err);
             }
-            console.log(mascotas);
-            res.render('mascotas');
-        }
-    }
-}
-*/
-controller.list = (req,res)=>{
-    req.getConnection
+            console.log(mascota);
+            res.render('mascota', {
+                data: mascota
+            });
+        });
+    });
 }
 
+controller.save = (req, res)=>{
+    
+
+}
 
 
 

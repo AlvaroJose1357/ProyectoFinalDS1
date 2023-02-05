@@ -29,9 +29,12 @@ app.use(myConnection(mysql, {
         user: 'root',
         password: '', 
         port: 3306, 
-        database: 'guarderiacanina'},'single'));
+        database: 'guarderiacanina'},'single'
+    )
+);
 
-        
+app.use(express.urlencoded({extend: false}))//desde el modulo de express se necesita el 
+//urlencode para poder entender todos los datos provenientes del form
 //router
 app.use('/', customerRouter);
 
