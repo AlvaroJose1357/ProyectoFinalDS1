@@ -15,15 +15,18 @@ app.set('src', path.join(__dirname, 'src'));
 //middlewares
 
 app.use(morgan('dev'));
-app.use(myConnection(mysql,{
-    host: 'localhost', 
-    user: 'root',
-    password: '', 
-    port: 3306, 
-    database: 
-}))
+app.use(myConnection(mysql, { 
+    
+        host: 'localhost:3000', 
+        user: 'root',
+        password: '', 
+        port: 3306, 
+        database: 'guarderiacanina'},'single'));
+
 
 //router
+
+
 
 //levantamos el servidor 
 app.listen(3000, ()=>{
