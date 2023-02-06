@@ -24,6 +24,24 @@ controller.save = (req, res)=>{
     });
 }
 
+controller.save = (req, res)=>{
+    const dataagend=req.body;
+    req.getConnection((err,conn) => {
+        conn.query('INSERT INTO agendamiento set ? ', [dataagend],(err, customer)=>{
+            console.log(agendamiento);
+            res.redirect('/')
+        });
+    });
+}
 
+controller.save = (req, res)=>{
+    const dataagend=req.body;
+    req.getConnection((err,conn) => {
+        conn.query('INSERT INTO agendamiento set ? ', [dataagend],(err, customer)=>{
+            console.log(agendamiento);
+            res.redirect('/')
+        });
+    });
+}
 
 module.exports = controller;
