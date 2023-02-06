@@ -24,10 +24,10 @@ controller.save = (req, res)=>{
     });
 }
 
-controller.save = (req, res)=>{
-    const dataagend=req.body;
+controller.delete = (req, res)=>{
+    const {nitagenda} = req.params;
     req.getConnection((err,conn) => {
-        conn.query('INSERT INTO agendamiento set ? ', [dataagend],(err, customer)=>{
+        conn.query('DELETE FROM agendamiento WHERE nitagenda = ? ', [nitagenda],(err, rows)=>{
             console.log(agendamiento);
             res.redirect('/')
         });
