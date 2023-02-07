@@ -2,11 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 const customerController = require('./customerController');
-router.get('/', customerController.list)
+router.get('/src/informe.html', customerController.list)
 router.post('/src/IngreAgenda.html/addAgenda', customerController.saveAgenda)
-router.post('/deleteAgenda/:id', customerController.deleteAgenda)
-router.post('/updateAgenda/:id', customerController.editAgenda)
-router.post('/updateAgenda/:id', customerController.updateAgenda)
-
+router.post('/src/IngreAgenda.html/updateAgenda/:id', customerController.editAgenda)
+router.post('/src/IngreAgenda.html/updateAgenda/:id', customerController.updateAgenda)
+router.post('/src/IngreAgenda.html/deleteAgenda/:id', customerController.deleteAgenda)
 
 module.exports = router;

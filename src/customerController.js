@@ -5,8 +5,7 @@ controller.list = (req,res)=>{
         conn.query('SELECT * FROM mascota', (err, mascota)=>{
             if(err){
                 res.json(err);
-            }
-            console.log(mascota);
+            } 
             res.render('mascota', {
                 datamasc: mascota
             });

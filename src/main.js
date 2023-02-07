@@ -15,7 +15,7 @@ app.set('port', process.env.PORT || 3001);
 //configuracion de las plantillas
 app.engine('html', ejs.renderFile);
 app.set('view engine', 'html');
-app.set('/src/index.html', path.join(__dirname, '/src/index.html'));
+app.set('/src/index.html', path.join(__dirname, '/src/index.html }'));
 
 //middlewares
 
