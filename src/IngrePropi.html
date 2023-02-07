@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingresar Agendamiento</title>
+    <title>Ingresar Propietario</title>
     <!-- Font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- Custom CSS-->
@@ -43,58 +43,71 @@
         <!-- Ingresar Datos -->
         <div class="ingresoDatos">
         <!-- #region <img src="/img/portada.png" alt="portada" > --> 
-            <form action="/add" class="formulario" >
+            <form action="/addPropi" class="formulario">
                 <h1 class="title">Ingresar Propietario</h1>
                 <!-- FALA TIPODOC QUE ES COMBO BOX-->
                 <div class="input-Control">
-                    <label for="Nit Agendamiento">Nit Agendamiento</label>
-                    <input id="nitAgenda" name="nitAgenda" type="text" required>
+                    <label for="Numero de Documento">Numero de Documento</label>
+                    <input id="NumeroDoc" name="NumeroDoc" type="text" required>
                     <small>Error Messenge</small>
                 </div>
                 <div class="input-Control">
-                    <label for="Numero Documento de la persona">Numero Documento de la persona</label>
-                    <input id="NumDocPers" name="NumDocPers" type="text" required>
+                    <label for="Nombre 1">Nombre 1</label>
+                    <input id="Nombre1" name="Nombre1" type="text" required>
                     <small>Error Messenge</small>
                 </div>
                 <div class="input-Control">
-                    <label for="Numero Documento de la mascota">Numero Documento de la mascota</label>
-                    <input id="NumDocMas" name="NumDocMas" type="text"required>
+                    <label for="Nombre 2">Nombre 2</label>
+                    <input id="Nombre2" name="Nombre2" type="text"required>
                     <small>Error Messenge</small>
                 </div>
                 <div class="input-Control">
-                    <label for="Fecha de Visita"> Fecha de Visita</label>
-                    <input id="fechaVisita" name="fechaVisita" type="date"required>
+                    <label for="Apellido 1"> Apellido 1</label>
+                    <input id="Apellido1" name="Apellido1" type="text"required>
                     <small>Error Messenge</small>
                 </div>
                 <div class="input-Control">
-                    <label for="Hora Visita">Hora Visita</label>
-                    <input id="horaVisi" name="horVisi" type="time" required>
+                    <label for="Apellido 2">Apellido 2</label>
+                    <input id="Apellido2" name="Apellido2" type="text" required>
                     <small>Error Messenge</small>
                 </div>
-                <!-- falta medio Pago que es listaDesplegable-->
-                <h4>Plan a adquirir</h4>
-                <div class="radio" id="Planes">
-                    <label for="Plan1">Plan 1</label>
-                    <input id="Plan1" name="Plan1" type="radio" >
-                    <label for="Plan2">Plan 2</label>
-                    <input id="Plan2" name="condiPlan2" type="radio" >
-                    <label for="Plan3">Plan 3</label>
-                    <input id="Plan3" name="Plan3" type="radio" >
-                    <label for="Plan4">Plan 4</label>
-                    <input id="Plan4" name="Plan4" type="radio" >
+                <div class="input-Control">
+                    <label for="Fecha de Nacimiento">Fecha de Nacimiento</label>
+                    <input id="FechaNac" name="fechaNac" type="date">
                     <small>Error Messenge</small>
                 </div>
-                <h4>Necesitas Servicio a tu Casa?</h4>
-                    <div class="radio" id="ServicioCasa">
-                    <label for="Si">Si</label>
-                    <input id="condiSi" name="condiSi" type="radio" >
-                    <label for="No">No</label>
-                    <input id="condiNo" name="condiNo" type="radio" >
-                    <small>Error Messenge</small>>
+                <div class="input-Control">
+                    <label for="Telefono">Telefono</label>
+                    <input id="Tel" name="tel" type="text" required>
+                    <small>Error Messenge</small>
+                </div>
+                <div class="input-Control">
+                    <label for="Direccion">Direccion</label>
+                    <input id="Dire" name="Dire" type="text" required>
+                    <small>Error Messenge</small>
+                </div>
+                <div class="input-Control">
+                    <label for="Email">Email</label>
+                    <input id="Email" name="Email" type="email" required>
+                    <small>Error Messenge</small>
+                </div>
+                <h4>Sexo</h4>
+                <div class="radio">
+                    <label for="Masculino">Masculino</label>
+                    <input id="Masculino" name="condiMasculino" type="radio" required>
+                    <label for="Femenino">Femenino</label>
+                    <input id="Femenino" name="condiFemenino" type="radio" required>
+                    <label for="NoDef">No Definido</label>
+                    <input id="NoDef" name="condiNoDef" type="radio" required>
+                    <small>Error Messenge</small>
+                </div>
+                <div class="input-Control">
+                    <label for="Contraseña">Contraseña</label>
+                    <input id="Contraseña" name="Contraseña" type="password" required>
+                    <small>Error Messenge</small>
                 </div>
                 <button id="buttonIngre">Ingresar</button>
                 <button id="buttonCance">Cancelar</button>
-
             </form>
         </div>
         <!-- Contactos-->

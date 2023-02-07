@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificar Propietario</title>
+    <title>Ingresar Agendamiento</title>
     <!-- Font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- Custom CSS-->
@@ -42,8 +42,9 @@
         </nav>
         <!-- Ingresar Datos -->
         <div class="ingresoDatos">
-            <form action="/" class="formulario" >
-                <h1 class="title">Modifica Agendamiento</h1>
+        <!-- #region <img src="/img/portada.png" alt="portada" > --> 
+            <form action="/addAgenda" class="formulario" >
+                <h1 class="title">Ingresar Propietario</h1>
                 <!-- FALA TIPODOC QUE ES COMBO BOX-->
                 <div class="input-Control">
                     <label for="Nit Agendamiento">Nit Agendamiento</label>
@@ -67,11 +68,10 @@
                 </div>
                 <div class="input-Control">
                     <label for="Hora Visita">Hora Visita</label>
-                    <input id="horVisi" name="horVisi" type="time" required>
+                    <input id="horaVisi" name="horVisi" type="time" required>
                     <small>Error Messenge</small>
                 </div>
                 <!-- falta medio Pago que es listaDesplegable-->
-                <h4>Plan a adquirir</h4>
                 <h4>Plan a adquirir</h4>
                 <div class="radio" id="Planes">
                     <label for="Plan1">Plan 1</label>
@@ -92,7 +92,7 @@
                     <input id="condiNo" name="condiNo" type="radio" >
                     <small>Error Messenge</small>>
                 </div>
-                <button id="buttonModi">Modificar</button>
+                <button id="buttonIngre">Ingresar</button>
                 <button id="buttonCance">Cancelar</button>
 
             </form>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar/Deshabilitar Agendamiento</title>
+    <title>Eliminar/Deshabilitar Tipo de Documento</title>
     <!-- Font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- Custom CSS-->
@@ -42,30 +42,20 @@
         </nav>
         <!-- Ingresar Datos -->
         <div class="ingresoDatos">
-            <form action="/" class="formulario" >
-                <h1 class="title">Elimina/Deshabilita Agendamiento</h1>
-                <!-- FALA TIPODOC QUE ES COMBO BOX-->
-                <div class="input-Control">
-                    <label for="Nit Agendamiento">Nit Agendamiento</label>
-                    <input id="nitAgenda" name="nitAgenda" type="text" required>
-                    <div class="error"></div>
-                </div>
-                <div class="input-Control">
-                    <label for="Numero Documento de la persona">Numero Documento de la persona</label>
-                    <input id="NumDocPers" name="NumDocPers" type="text" required>
-                    <div class="error"></div>
-                </div>
-                <div class="input-Control">
-                    <label for="Numero Documento de la mascota">Numero Documento de la mascota</label>
-                    <input id="NumDocMas" name="NumDocMas" type="text"required>
-                    <div class="error"></div>
-                </div>
-                <div class="input-Control">
-                    <label for="Fecha de Visita"> Fecha de Visita</label>
-                    <input id="fechaVisita" name="fechaVisita" type="date"required>
-                    <div class="error"></div>
-                </div>
-                <button id="buttonElim">Elimina</button>
+            <form action="/deleteTipoDoc" class="formulario">
+                <h1 class="title">Elimina/Deshabilita Tipo de Documento</h1>
+                    <!-- FALA TIPODOC QUE ES COMBO BOX-->
+                    <div class="input-Control">
+                        <label for="Codigo Tipo de Documento">Codigo Metodo Pago</label>
+                        <input id="codTipoDoc" name="codTipoDoc" type="text" required>
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-Control">
+                        <label for="Descripcion">Descripcion</label>
+                        <input id="descriTipoDoc" name="descri" type="text" required>
+                        <div class="error"></div>
+                    </div>
+                    <button id="buttonElim">Elimina</button>
                 <button id="buttonDesha">Deshabilita</button>
                 <button id="buttonCance">Cancelar</button>
             </form>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar/Deshabilitar Tipo de Documento</title>
+    <title>Eliminar/Deshabilitar Metodo Pago</title>
     <!-- Font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- Custom CSS-->
@@ -42,22 +42,23 @@
         </nav>
         <!-- Ingresar Datos -->
         <div class="ingresoDatos">
-            <form action="/" class="formulario">
-                <h1 class="title">Elimina/Deshabilita Tipo de Documento</h1>
-                    <!-- FALA TIPODOC QUE ES COMBO BOX-->
-                    <div class="input-Control">
-                        <label for="Codigo Tipo de Documento">Codigo Metodo Pago</label>
-                        <input id="codTipoDoc" name="codTipoDoc" type="text" required>
-                        <div class="error"></div>
-                    </div>
-                    <div class="input-Control">
-                        <label for="Descripcion">Descripcion</label>
-                        <input id="descriTipoDoc" name="descri" type="text" required>
-                        <div class="error"></div>
-                    </div>
-                    <button id="buttonElim">Elimina</button>
+            <form action="/deleteMetPagp" class="formulario">
+                <h1 class="title">Elimina/Deshabilita Metodo de Pago</h1>
+                <!-- FALA TIPODOC QUE ES COMBO BOX-->
+                <div class="input-Control">
+                    <label for="Codigo Metodo Pago">Codigo Metodo Pago</label>
+                    <input id="codMetPago" name="codMetPago" type="text" required>
+                    <div class="error"></div>
+                </div>
+                <div class="input-Control">
+                    <label for="Descripcion">Descripcion</label>
+                    <input id="descriMetPago" name="descri" type="text" required>
+                    <div class="error"></div>
+                </div>
+                <button id="buttonElim">Elimina</button>
                 <button id="buttonDesha">Deshabilita</button>
                 <button id="buttonCance">Cancelar</button>
+
             </form>
         </div>
         <!-- Contactos-->

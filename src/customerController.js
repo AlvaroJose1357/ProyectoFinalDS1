@@ -14,17 +14,17 @@ controller.list = (req,res)=>{
     });
 }
 
-controller.save = (req, res)=>{
+controller.saveAgenda = (req, res)=>{
     const dataagend=req.body;
     req.getConnection((err,conn) => {
-        conn.query('INSERT INTO agendamiento set ? ', [dataagend],(err, customer)=>{
+        conn.query('INSERT INTO agendamiento set ? ', [dataagend],(err, agendamiento)=>{
             console.log(agendamiento);
             res.redirect('/')
         });
     });
 }
 
-controller.delete = (req, res)=>{
+controller.deleteAgenda = (req, res)=>{
     const {nitagenda} = req.params;
     req.getConnection((err,conn) => {
         conn.query('DELETE FROM agendamiento WHERE nitagenda = ? ', [nitagenda],(err, rows)=>{
@@ -34,12 +34,13 @@ controller.delete = (req, res)=>{
     });
 }
 
-controller.save = (req, res)=>{
-    const dataagend=req.body;
+controller.updateAgenda= (req, res)=>{
+    const {nitagenda} = req.params;
     req.getConnection((err,conn) => {
-        conn.query('INSERT INTO agendamiento set ? ', [dataagend],(err, customer)=>{
-            console.log(agendamiento);
-            res.redirect('/')
+        conn.query('SELECT * FROM agendamiento WHERE nitagenda ? ', [dataagend],(err, agendamiento)=>{
+            res.render('agendamiento_edit', {
+                dataagend: agendamiento
+            });
         });
     });
 }

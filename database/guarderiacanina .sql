@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-02-2023 a las 01:11:04
+-- Tiempo de generación: 07-02-2023 a las 01:45:54
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -178,8 +178,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idUsuario`, `nombreusu1`, `nombreusu2`, `apellidousu1`, `apellidousu2`, `fechanacimientousu`, `telefonousu`, `direccionusu`, `emailusu`, `genero`, `idperfil`, `idTipoDoc`, `contrasena`) VALUES
-(3882, 'juliana', 'maria', 'lopez', 'gomez', '1978-05-05', 38272, 'calle 20', 'carlito.gmail.com', 'no indentificado', 5633, 7272, '7838928'),
-(9216, 'luis', 'adolfo', 'gomez', 'ruiz', '1999-07-13', 839292, 'miami', 'luisitoAdol.gmail.com', 'masculino', 7382, 6399, '292019');
+(3882, 'juliana', 'maria', 'lopez', 'gomez', '1978-05-05', 38272, 'calle 20', 'carlito@gmail.com', 'no indentificado', 5633, 7272, '7838928'),
+(9216, 'luis', 'adolfo', 'gomez', 'ruiz', '1999-07-13', 839292, 'miami', 'luisitoAdol@gmail.com', 'masculino', 7382, 6399, '292019');
 
 -- --------------------------------------------------------
 
@@ -190,16 +190,17 @@ INSERT INTO `usuario` (`idUsuario`, `nombreusu1`, `nombreusu2`, `apellidousu1`, 
 CREATE TABLE `vacuna` (
   `nitVacuna` int(11) NOT NULL,
   `nombreVacuna` varchar(100) DEFAULT NULL,
-  `fechaApliVacu` date DEFAULT NULL
+  `fechaApliVacu` date DEFAULT NULL,
+  `data` longblob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `vacuna`
 --
 
-INSERT INTO `vacuna` (`nitVacuna`, `nombreVacuna`, `fechaApliVacu`) VALUES
-(7383, 'parvo virosis', '2023-01-02'),
-(8932, 'virusop', '2022-03-04');
+INSERT INTO `vacuna` (`nitVacuna`, `nombreVacuna`, `fechaApliVacu`, `data`) VALUES
+(7383, 'parvo virosis', '2023-01-02', NULL),
+(8932, 'virusop', '2022-03-04', NULL);
 
 --
 -- Índices para tablas volcadas

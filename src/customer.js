@@ -3,8 +3,9 @@ const router = express.Router();
 
 const customerController = require('./customerController');
 router.get('/', customerController.list)
-router.post('/add', customerController.save)
-router.post('/delete', customerController.delete)
+router.post('/addAgena', customerController.saveAgenda)
+router.post('/deleteAgenda/:id', customerController.deleteAgenda)
+router.post('/updateAgenda/:id', customerController.updateAgenda)
 
 
 module.exports = router;

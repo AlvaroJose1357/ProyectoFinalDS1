@@ -15,7 +15,7 @@ const customerRouter = require('./customer');
 //settings 
 app.set('port', process.env.PORT || 3001);
 //configuracion de las plantillas
-app.set('view engine', 'ejs');
+app.set('view engine', 'html');
 app.set('src', path.join(__dirname, 'src'));
 
 //middlewares

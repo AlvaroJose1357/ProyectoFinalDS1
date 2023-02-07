@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar/Deshabilitar Propietario</title>
+    <title>Ingresar Metodo Pago </title>
     <!-- Font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- Custom CSS-->
@@ -43,45 +43,20 @@
         <!-- Ingresar Datos -->
         <div class="ingresoDatos">
         <!-- #region <img src="/img/portada.png" alt="portada" > --> 
-            <form action="/" class="formulario">
-                <h1 class="title">Eliminar/Deshabilitar Propietario</h1>
-                <div class="busqueda">
-                    <input type="text" name="busqueda" placeholder="Ingresa Dato Principal Aqui " class="Consul">
-                </div>
+            <form action="/addMetPago" class="formulario">
+                <h1 class="title">Ingresar Metodo de Pago/h1>
                 <!-- FALA TIPODOC QUE ES COMBO BOX-->
                 <div class="input-Control">
-                    <label for="Numero de Documento">Numero de Documento</label>
-                    <input id="NumeroDoc" name="NumeroDoc" type="text" required>
-                    <div class="error"></div>
+                    <label for="Codigo Metodo Pago">Codigo Metodo Pago</label>
+                    <input id="codMetPago" name="codMetPago" type="text" required>
+                    <small>Error Messenge</small>
                 </div>
                 <div class="input-Control">
-                    <label for="Nombre 1">Nombre 1</label>
-                    <input id="Nombre1" name="Nombre1" type="text" required>
-                    <div class="error"></div>
+                    <label for="Descripcion">Descripcion</label>
+                    <input id="descriMetPago" name="descri" type="text" required>
+                    <small>Error Messenge</small>
                 </div>
-                <div class="input-Control">
-                    <label for="Nombre 2">Nombre 2</label>
-                    <input id="Nombre2" name="Nombre2" type="text"required>
-                    <div class="error"></div>
-                </div>
-                <div class="input-Control">
-                    <label for="Apellido 1"> Apellido 1</label>
-                    <input id="Apellido1" name="Apellido1" type="text"required>
-                    <div class="error"></div>
-                </div>
-                <div class="input-Control">
-                    <label for="Apellido 2">Apellido 2</label>
-                    <input id="Apellido2" name="Apellido2" type="text" required>
-                    <div class="error"></div>
-                </div>
-                <div class="input-Control">
-                    <label for="Email">Email</label>
-                    <input id="Email" name="Email" type="email" required>
-                    <div class="error"></div>
-                </div>
-                </div>
-                <button id="buttonElim">Elimina</button>
-                <button id="buttonDesha">Deshabilita</button>
+                <button id="buttonIngre">Ingresar</button>
                 <button id="buttonCance">Cancelar</button>
 
             </form>
