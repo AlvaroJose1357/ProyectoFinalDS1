@@ -1,5 +1,5 @@
 const controller = {};
-
+/*
 controller.list = (req,res)=>{
     req.getConnection((err,conn) => {
         conn.query('SELECT * FROM mascota', (err, mascota)=>{
@@ -13,7 +13,7 @@ controller.list = (req,res)=>{
         });
     });
 }
-
+ */
 controller.saveAgenda = (req, res)=>{
     const dataagend=req.body;
     req.getConnection((err,conn) => {
