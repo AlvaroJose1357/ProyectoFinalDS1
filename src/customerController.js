@@ -1,5 +1,5 @@
 const controller = {};
-/*
+
 controller.list = (req,res)=>{
     req.getConnection((err,conn) => {
         conn.query('SELECT * FROM mascota', (err, mascota)=>{
@@ -13,7 +13,7 @@ controller.list = (req,res)=>{
         });
     });
 }
- */
+
 controller.saveAgenda = (req, res)=>{
     const dataagend=req.body;
     req.getConnection((err,conn) => {
@@ -34,13 +34,23 @@ controller.deleteAgenda = (req, res)=>{
     });
 }
 
-controller.updateAgenda= (req, res)=>{
+controller.editAgenda= (req, res)=>{
     const {nitagenda} = req.params;
     req.getConnection((err,conn) => {
-        conn.query('SELECT * FROM agendamiento WHERE nitagenda ? ', [dataagend],(err, agendamiento)=>{
+        conn.query('SELECT * FROM agendamiento WHERE nitagenda ? ', [nitagenda],(err, agendamiento)=>{
             res.render('agendamiento_edit', {
-                dataagend: agendamiento
+                dataagend: agendamiento[0]
             });
+        });
+    });
+}
+
+controller.updateAgenda= (req, res)=>{
+    const {nitagenda} = req.params;
+    const newAgenda =req.body;
+    req.getConnection((err,conn) => {
+        conn.query('UPDATE agendamiento set ? WHERE nitagenda ? ', [newAgenda,nitagenda],(err, rows)=>{
+            res.redirect('/')
         });
     });
 }
