@@ -1,4 +1,5 @@
 const express = require('express');
+const ejs = require('ejs');
 const { dirname } = require('path');
 const path = require('path');
 const morgan = require('morgan');
@@ -9,12 +10,10 @@ const app = express();
 //importar rutas 
 const customerRouter = require('./customer');
 
-
-
-
 //settings 
 app.set('port', process.env.PORT || 3001);
 //configuracion de las plantillas
+app.engine('html', ejs.renderFile);
 app.set('view engine', 'html');
 app.set('src', path.join(__dirname, 'src'));
 
@@ -33,7 +32,7 @@ app.use(myConnection(mysql, {
     )
 );
 //preguntar si hay files en BD
-app.use(express.urlencoded({extend: false}))//desde el modulo de express se necesita el 
+app.use(express.urlencoded({extend: true}))//desde el modulo de express se necesita el 
 //urlencode para poder entender todos los datos provenientes del form
 //router
 app.use('/', customerRouter);
