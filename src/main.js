@@ -32,7 +32,7 @@ app.use(myConnection(mysql, {
     )
 );
 //preguntar si hay files en BD
-app.use(express.urlencoded({extend: true}))//desde el modulo de express se necesita el 
+//app.use(express.urlencoded({extend: true}))//desde el modulo de express se necesita el 
 //urlencode para poder entender todos los datos provenientes del form
 //router
 app.use('/', customerRouter);
